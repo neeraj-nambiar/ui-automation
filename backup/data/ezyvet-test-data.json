@@ -1,0 +1,43 @@
+{
+  "credentials": {
+    "valid": {
+      "email": "botai@test.com",
+      "password": "Sunshine1",
+      "department": "Master branch"
+    }
+  },
+  "testScenarios": {
+    "validLogin": {
+      "description": "Login with valid credentials",
+      "email": "botai@test.com",
+      "password": "Sunshine1",
+      "department": "Master branch",
+      "expectedResult": "success"
+    },
+    "invalidEmail": {
+      "description": "Login with invalid email",
+      "email": "invalid@test.com",
+      "password": "WrongPassword",
+      "expectedResult": "error"
+    },
+    "emptyPassword": {
+      "description": "Login with empty password",
+      "email": "botai@test.com",
+      "password": "",
+      "expectedResult": "error"
+    },
+    "emptyEmail": {
+      "description": "Login with empty email",
+      "email": "",
+      "password": "Sunshine1",
+      "expectedResult": "error"
+    }
+  },
+  "environment": {
+    "baseUrl": "https://master.usw2.trial.ezyvet.com",
+    "department": "Master branch"
+  }
+}
+
+
+

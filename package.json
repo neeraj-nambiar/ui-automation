@@ -1,0 +1,30 @@
+{
+  "name": "ezyvet-ui-automation",
+  "version": "1.0.0",
+  "description": "ezyVet UI automation tests using Playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:with-report": "playwright test && playwright show-report",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:login": "playwright test --grep=\"login\"",
+    "test:logout": "playwright test --grep=\"logout\"",
+    "install:browsers": "playwright install",
+    "show:report": "playwright show-report"
+  },
+  "keywords": [
+    "ezyvet",
+    "playwright",
+    "automation",
+    "testing",
+    "ui"
+  ],
+  "author": "ezyVet QA Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^20.0.0",
+    "dotenv": "^16.3.1"
+  }
+}

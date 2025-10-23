@@ -1,0 +1,98 @@
+{
+  "appointments": {
+    "basicAppointment": {
+      "description": "Minimal appointment with only mandatory field",
+      "patientId": "201854",
+      "patientName": "1=1\" Lomu",
+      "clientId": "301836",
+      "clientName": "Lomu, Jonah",
+      "resource": "Dr Smith",
+      "expectedResult": "success"
+    },
+    "fullAppointment": {
+      "description": "Complete appointment with all details",
+      "patientId": "201854",
+      "patientName": "1=1\" Lomu",
+      "clientId": "301836",
+      "clientName": "Lomu, Jonah",
+      "resource": "Dr Smith",
+      "appointmentType": "Consult",
+      "billingTrigger": "6000037 - Consult",
+      "billingQuantity": "1.0000",
+      "reminderGroup": "Consult Appointment",
+      "status": "No Status",
+      "shareOnline": false,
+      "clinicalRecordId": "304848",
+      "caseOwner": "Dr Smith",
+      "referringVet": "200044 - Associated Vet",
+      "notes": "Test appointment created via automation",
+      "expectedResult": "success"
+    },
+    "appointmentWithDateTime": {
+      "description": "Appointment with specific date and time",
+      "patientId": "201854",
+      "patientName": "1=1\" Lomu",
+      "resource": "Dr Smith",
+      "appointmentType": "Consult",
+      "date": "2025-10-16",
+      "time": "09:45",
+      "expectedResult": "success"
+    }
+  },
+  "validationScenarios": {
+    "missingMandatoryField": {
+      "description": "Attempt to save without People/Resources field",
+      "patientId": "201854",
+      "appointmentType": "Consult",
+      "expectedResult": "error",
+      "expectedError": "People/Resources is required"
+    },
+    "invalidResource": {
+      "description": "Use non-existent resource name",
+      "patientId": "201854",
+      "resource": "NonExistentDoctor",
+      "expectedResult": "error"
+    }
+  },
+  "patients": {
+    "testPatient1": {
+      "id": "201854",
+      "name": "1=1\" Lomu",
+      "clientId": "301836",
+      "clientName": "Lomu, Jonah"
+    }
+  },
+  "resources": {
+    "drSmith": {
+      "name": "Dr Smith",
+      "type": "Doctor/Veterinarian"
+    },
+    "drJones": {
+      "name": "Dr Jones",
+      "type": "Doctor/Veterinarian"
+    }
+  },
+  "appointmentTypes": {
+    "consult": {
+      "name": "Consult",
+      "billingTrigger": "6000037 - Consult"
+    },
+    "surgery": {
+      "name": "Surgery",
+      "billingTrigger": "Surgery"
+    },
+    "checkup": {
+      "name": "Check-up",
+      "billingTrigger": "Check-up"
+    }
+  },
+  "successMessages": {
+    "recordSaved": "Record Saved Successfully!",
+    "appointmentCreated": "Appointment created successfully"
+  },
+  "errorMessages": {
+    "mandatoryField": "This field is required",
+    "invalidData": "Invalid data provided"
+  }
+}
+
