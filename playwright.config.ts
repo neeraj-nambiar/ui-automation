@@ -6,9 +6,9 @@ dotenv.config();
 
 export default defineConfig({
   testDir: './tests',
-  fullyParallel: false,
+  fullyParallel: true,
   retries: 0,
-  workers: 1,
+  workers: 4,
   reporter: [
     ['html', { open: 'never' }], 
     ['list']
